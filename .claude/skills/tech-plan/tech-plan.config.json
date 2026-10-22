@@ -1,0 +1,8 @@
+{
+  "store": "github",
+  "plans": null,
+  "project": { "owner": "timhettler", "number": 2 },
+  "format": "source ~/.nvm/nvm.sh && nvm use && pnpm exec prettier --write",
+  "destinations": { "adr": "docs/adr", "lessons": "docs/lessons" },
+  "prSkill": "pr"
+}
