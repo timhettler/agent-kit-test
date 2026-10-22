@@ -1,0 +1,7 @@
+{
+  "worktreeRoot": ".claude/worktrees/",
+  "activate": "source ~/.nvm/nvm.sh && nvm use",
+  "install": "pnpm install --prefer-offline",
+  "generate": [],
+  "hooks": { "installedBy": "pnpm install" }
+}

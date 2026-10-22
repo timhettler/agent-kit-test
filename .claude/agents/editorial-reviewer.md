@@ -42,6 +42,9 @@ running `writing-setup`. Then review only for claims that drifted from the code.
 
 ## Writing standard in this repo
 
+- [`docs/guidelines/code-comments.md`](../../docs/guidelines/code-comments.md), which `AGENTS.md` §
+  Writing names as the authority on comments.
+
 ## Report
 
 One section per finding, most harmful first: a false claim, then a copy of another doc, then bloat.
