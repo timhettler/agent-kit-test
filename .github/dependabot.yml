@@ -1,0 +1,22 @@
+# Each PR is labelled here, since Dependabot's labeler runs get a read-only token.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: chore
+    labels: [chore, dependencies]
+    # @types/node matches the repo's Node major, so bump the two together by hand.
+    ignore:
+      - dependency-name: '@types/node'
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+    labels: [ci]
