@@ -1,0 +1,51 @@
+# No `paths:` filter: a required check that a path filter skips never reports, and the PR waits on
+# it forever. Scope inside the job instead.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Before setup-node, whose `cache: pnpm` runs pnpm. No `version`: it reads `packageManager`.
+      - uses: pnpm/setup@v3
+        with:
+          install: false
+          node-version-file: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      # Fail on a drifted lockfile rather than silently repairing it.
+      - run: pnpm install --frozen-lockfile
+
+      # `!cancelled()` so each check reports even when an earlier one fails.
+      - if: ${{ !cancelled() }}
+        run: pnpm typecheck
+
+      - if: ${{ !cancelled() }}
+        run: pnpm lint
+
+      - if: ${{ !cancelled() }}
+        run: pnpm check:markdown
+
+      - if: ${{ !cancelled() }}
+        run: pnpm format:check
+
+      - if: ${{ !cancelled() }}
+        run: pnpm test
