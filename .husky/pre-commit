@@ -1,0 +1,3 @@
+# Under a Node older than the pinned one, this fails with ERR_UNKNOWN_BUILTIN_MODULE (pnpm 11 needs
+# node:sqlite). The hook isn't broken; switch Node.
+pnpm exec lint-staged
