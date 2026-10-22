@@ -1,0 +1,21 @@
+node_modules
+
+# Made when pnpm can't read ~/.npmrc, as in a sandboxed shell. Safe to delete.
+.pnpm-store/
+
+dist/
+build/
+coverage/
+*.tsbuildinfo
+*.tgz
+
+# `.env.example` lists the variables.
+.env
+.env.*
+!.env.example
+
+.claude/worktrees/
+# Per-machine; must not be shared.
+.claude/settings.local.json
+
+.DS_Store

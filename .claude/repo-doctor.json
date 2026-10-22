@@ -1,0 +1,90 @@
+{
+  "templateVersion": 4,
+  "kind": {
+    "stable": false,
+    "team": false
+  },
+  "guess": {
+    "stable": false,
+    "team": false
+  },
+  "slots": {
+    "packageManager": {
+      "verdict": "defaulted",
+      "value": "pnpm"
+    },
+    "runtimePin": {
+      "verdict": "defaulted",
+      "value": ".nvmrc"
+    },
+    "repoShape": {
+      "verdict": "asked",
+      "value": "single"
+    },
+    "monorepoRunner": {
+      "verdict": "defaulted",
+      "value": "none"
+    },
+    "typescript": {
+      "verdict": "defaulted",
+      "value": "typescript"
+    },
+    "formatter": {
+      "verdict": "defaulted",
+      "value": "prettier"
+    },
+    "linter": {
+      "verdict": "defaulted",
+      "value": "oxlint"
+    },
+    "hookManager": {
+      "verdict": "defaulted",
+      "value": "husky"
+    },
+    "stagedRunner": {
+      "verdict": "defaulted",
+      "value": "lint-staged"
+    },
+    "commitConvention": {
+      "verdict": "defaulted",
+      "value": "commitlint"
+    },
+    "testRunner": {
+      "verdict": "defaulted",
+      "value": "vitest"
+    },
+    "release": {
+      "verdict": "defaulted",
+      "value": "none"
+    },
+    "dependencyUpdates": {
+      "verdict": "defaulted",
+      "value": "dependabot"
+    },
+    "liveStateStore": {
+      "verdict": "asked",
+      "value": "github"
+    }
+  },
+  "files": [
+    ".claude/skills/pr/CONFIGURE.md",
+    ".claude/skills/pr/SKILL.md",
+    ".claude/skills/pr/agents/adversarial-reviewer.md",
+    ".claude/skills/pr/agents/editorial-reviewer.md",
+    ".claude/skills/pr/templates/pull_request_template.md",
+    ".env.example",
+    ".gitattributes",
+    ".gitignore",
+    ".nvmrc",
+    ".oxlintrc.json",
+    ".prettierignore",
+    ".prettierrc",
+    ".vscode/settings.json",
+    ".worktreeinclude",
+    "README.md",
+    "package.json",
+    "scripts/check-markdown.ts",
+    "tsconfig.base.json",
+    "tsconfig.json"
+  ]
+}

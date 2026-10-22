@@ -1,0 +1,27 @@
+{
+  "baseBranch": "main",
+  "template": ".github/pull_request_template.md",
+  "activate": "source ~/.nvm/nvm.sh && nvm use",
+  "planSkill": null,
+  "worktreeSkill": null,
+  "lessons": null,
+  "checkBar": null,
+  "review": {
+    "copilot": null,
+    "skipWhenOnly": ["README.md", "docs/"],
+    "adversarialAgent": "adversarial-reviewer",
+    "adversarialWhenAny": [
+      "scripts/**",
+      ".github/workflows/**",
+      ".husky/**",
+      "lint-staged.config.js",
+      "commitlint.config.js",
+      ".oxlintrc.json",
+      ".prettierrc",
+      ".prettierignore",
+      "tsconfig*.json"
+    ],
+    "editorialAgent": "editorial-reviewer",
+    "editorialWhenAny": ["**"]
+  }
+}
